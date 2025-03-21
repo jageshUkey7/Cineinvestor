@@ -10,23 +10,29 @@
             margin: 0;
             padding: 0;
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #232323, #4e4e4e);
+            background: linear-gradient(135deg, #121212, #282828);
             color: #fff;
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
+            overflow: hidden;
         }
         .login-container {
-            width: 100%;
+            width: 90%;
             max-width: 1200px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             background: #1a1a1a;
             border-radius: 12px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             overflow: hidden;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         .left-section {
             flex: 1;
@@ -39,68 +45,57 @@
         }
         .left-section-content {
             text-align: center;
-            color: #fff;
-            font-size: 1.5rem;
-            font-weight: 500;
-            line-height: 1.8;
             background: rgba(0, 0, 0, 0.6);
             padding: 2rem;
             border-radius: 10px;
+            animation: zoomIn 1.2s ease-in-out;
+        }
+        @keyframes zoomIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
         }
         .right-section {
             flex: 1;
             padding: 3rem;
-        }
-        .logo-section {
             text-align: center;
-            margin-bottom: 2rem;
         }
         .logo-section img {
-            width: 150px;
+            width: 120px;
+            animation: bounce 2s infinite alternate;
         }
-        .right-section-inner {
-            max-width: 400px;
-            margin: auto;
-        }
-        .login-head h3 {
-            font-weight: 600;
-            color: #e50914;
-            margin-bottom: 1rem;
-            text-align: center;
+        @keyframes bounce {
+            from { transform: translateY(0); }
+            to { transform: translateY(-10px); }
         }
         .form-inner {
-            background: #333;
+            background: #222;
             padding: 2rem;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
         }
         .form-group {
             margin-bottom: 1.5rem;
         }
         .form-group label {
-            display: block;
             font-size: 1rem;
             color: #bbb;
-            margin-bottom: 0.5rem;
         }
         .form-control {
             width: 100%;
             padding: 0.75rem;
             font-size: 1rem;
-            border: 1px solid #555;
-            border-radius: 4px;
-            outline: none;
-            transition: border-color 0.3s;
+            border: 1px solid #444;
+            border-radius: 5px;
+            background: #333;
+            color: #fff;
+            transition: border 0.3s ease, box-shadow 0.3s ease;
         }
         .form-control:focus {
             border-color: #e50914;
-            box-shadow: 0 0 5px rgba(229, 9, 20, 0.5);
+            box-shadow: 0 0 8px rgba(229, 9, 20, 0.6);
         }
-        .sumt-btn {
-            text-align: center;
-            margin-top: 1.5rem;
-        }
-        .sumt-btn button {
+        .submit-btn {
             width: 100%;
             padding: 0.75rem;
             font-size: 1rem;
@@ -110,14 +105,16 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease;
+            transition: transform 0.3s ease, background 0.3s ease;
+            position: relative;
         }
-        .sumt-btn button:hover {
-            background-color: #c40612;
-            transform: translateY(-2px);
+        .submit-btn:hover {
+            background: #c40612;
+            transform: scale(1.05);
         }
-        .sumt-btn button:active {
-            transform: translateY(0);
+        .submit-btn.moving {
+            position: absolute;
+            transition: left 0.2s ease, top 0.2s ease;
         }
         @media (max-width: 768px) {
             .login-container {
@@ -134,6 +131,7 @@
     </style>
 </head>
 <body>
+
     <div class="login-container">
         <div class="left-section">
             <div class="left-section-content">
@@ -150,22 +148,27 @@
                     <h3>Investor Login</h3>
                 </div>
                 <div class="form-inner">
-                    <form action="dologin" method="post" autocomplete="off">
+                    <form id="login-form" action="dologin" method="post" autocomplete="off">
                         <div class="form-group">
                             <label for="username">Username</label>
-                            <input id="username" name="username" type="text" class="form-control" required>
+                            <input id="username" name="username" type="text" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>
-                            <input id="password" name="password" type="password" class="form-control" required>
+                            <input id="password" name="password" type="password" class="form-control">
                         </div>
                         <div class="sumt-btn">
-                            <button type="submit">Log In</button>
+                            <button type="submit" class="submit-btn" id="submit-btn">Log In</button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
+
+    
+<script>
+
+</script>
 </body>
 </html>
