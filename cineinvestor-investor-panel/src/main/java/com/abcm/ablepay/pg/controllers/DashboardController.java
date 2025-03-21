@@ -43,7 +43,7 @@ public class DashboardController {
 	@GetMapping("/Projects")
 	public String Projects(Model model,HttpSession session) {
 
-		//		try 
+		//		try  
 		//		{
 		LoggerUtil.LOGGER.info("inside Projects ");
 		//			 log.info(" loggedInUser  ::"+ session.getAttribute("loggedInUser"));
