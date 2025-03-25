@@ -16,6 +16,8 @@ public class DashboardController {
 	
 	
 	
+	
+	
 	@GetMapping("/kycDetails")
 	public String kycDetails(Model model,HttpSession session) {
 
@@ -63,6 +65,8 @@ public class DashboardController {
 		//		}
 		return "Projects";
 	}
+	
+	
 
 	
 }

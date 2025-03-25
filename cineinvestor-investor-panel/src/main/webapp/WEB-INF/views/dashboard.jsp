@@ -32,13 +32,13 @@
         }
 
         .card {
-            background: rgba(255, 182, 193, 0.5); /* Light Pink */
-    border-radius: 10px;
-    padding: 20px;
-    width: 200px;
-    text-align: center;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 20px;
+            width: 200px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
         }
 
         .card:hover {
@@ -92,11 +92,10 @@
         <!-- Dashboard Cards -->
         <div class="dashboard-cards">
             <div class="card">
-    <i class="fas fa-indian-rupee-sign"></i>
-    <h4>Total Investments</h4>
-    <p> Rs. 500,000</p>
-</div>
-            
+                <i class="fas fa-dollar-sign"></i>
+                <h4>Total Investments</h4>
+                <p>$500,000</p>
+            </div>
             <div class="card">
                 <i class="fas fa-film"></i>
                 <h4>Projects Funded</h4>
@@ -107,11 +106,11 @@
                 <h4>Returns</h4>
                 <p>20%</p>
             </div>
-            <!-- <div class="card">
+            <div class="card">
                 <i class="fas fa-user-friends"></i>
                 <h4>Partners</h4>
                 <p>12</p>
-            </div> -->
+            </div>
         </div>
 
         <!-- KYC Verification Progress -->
