@@ -72,7 +72,8 @@ public class SecurityService {
 	                                                            Authentication authentication) {
 	                                    String context = "";
 
-	                                    try {
+	                                    try 
+	                                    {
 	                                        log.info("This user logged out: " + authentication.getName());
 	                                        log.info("Principal: " + authentication.getPrincipal().toString());
 	                                        // User userDetails = userDetailsRepository.getData(authentication.getName());

@@ -25,7 +25,7 @@
             width: 250px;
             height: 100vh;
             background: #1a1a1a;
-            color: #fff;
+            color: #fff; 
             padding-top: 20px;
             position: fixed;
             left: 0;
